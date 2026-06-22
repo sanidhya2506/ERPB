@@ -14,9 +14,9 @@ ERPB was never planned as a “project.”
 
 It didn’t begin in a classroom assignment, a hackathon briefing, or a technical requirement document.
 
-It began much earlier — in observation.
+It began much earlier; in observation.
 
-Late nights, endless scrolling, and watching K-Dramas like *“Teacher, I Will Teach You a Lesson”* exposed a recurring theme:
+Late nights, endless scrolling, and watching K-Dramas like *“Teach You a Lesson”* exposed a recurring theme:
 
 - Institutions with unchecked authority  
 - Students without structured voice  
