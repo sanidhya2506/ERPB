@@ -1,7 +1,10 @@
 # ERPB — Education Rights & Protection Bureau
 
 ## 🌐 Live Preview
-🚀 https://sanidhya2506.github.io/ERPB/
+ https://sanidhya2506.github.io/ERPB/
+
+## 📄 Research Publication: 
+https://doi.org/10.5281/zenodo.20797634
 
 > “Systems don’t change because people stay silent.  
 > They change when silence is no longer an option.”
@@ -182,6 +185,27 @@ Inspired by:
 - Neon-accented modern web interfaces  
 
 The goal is clarity, not decoration.
+
+---
+### 📄 Research Publication
+
+ERPB has been formally documented and published as an independent research publication.
+
+Publication
+
+ERPB: A Student-Centric Web Platform for Educational Rights Awareness, Grievance Reporting, and Protection Support
+
+DOI
+
+https://doi.org/10.5281/zenodo.20797634
+
+Research Topics
+Educational Technology
+Student Protection Systems
+Grievance Reporting Frameworks
+Awareness Platforms
+Web Engineering
+Social Impact Technology
 
 ---
 
