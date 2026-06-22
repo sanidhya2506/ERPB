@@ -45,9 +45,11 @@ display:flex;
 justify-content:center;
 align-items:center;
 
-overflow:hidden;
+overflow-x:hidden;
 
 position:relative;
+
+padding:20px;
 
 }
 
@@ -55,7 +57,7 @@ position:relative;
 
 .glow{
 
-position:absolute;
+position:fixed;
 
 border-radius:50%;
 
@@ -65,12 +67,14 @@ opacity:.12;
 
 animation:float 10s infinite ease-in-out;
 
+z-index:-1;
+
 }
 
 .glow1{
 
-width:400px;
-height:400px;
+width:clamp(300px, 50vw, 400px);
+height:clamp(300px, 50vw, 400px);
 
 background:#00bfff;
 
@@ -81,8 +85,8 @@ left:-100px;
 
 .glow2{
 
-width:400px;
-height:400px;
+width:clamp(300px, 50vw, 400px);
+height:clamp(300px, 50vw, 400px);
 
 background:#4FC3F7;
 
@@ -121,7 +125,7 @@ padding:20px;
 display:grid;
 grid-template-columns:1fr 1fr;
 
-gap:50px;
+gap:40px;
 
 align-items:center;
 
@@ -137,7 +141,7 @@ padding:20px;
 
 .logo{
 
-font-size:40px;
+font-size:clamp(28px, 6vw, 40px);
 font-weight:900;
 
 color:#00BFFF;
@@ -152,12 +156,14 @@ margin-bottom:20px;
 
 .tagline{
 
-font-size:3rem;
+font-size:clamp(1.5rem, 5vw, 3rem);
 font-weight:900;
 
 line-height:1.1;
 
 margin-bottom:25px;
+
+word-break:break-word;
 
 }
 
@@ -175,6 +181,8 @@ line-height:1.8;
 
 margin-bottom:30px;
 
+font-size:clamp(0.9rem, 2vw, 1.05rem);
+
 }
 
 .features{
@@ -189,6 +197,13 @@ gap:15px;
 
 color:#d1d5db;
 
+font-size:clamp(0.85rem, 2vw, 1rem);
+
+display:flex;
+align-items:center;
+
+gap:10px;
+
 }
 
 .feature span{
@@ -196,7 +211,7 @@ color:#d1d5db;
 color:#00ff88;
 font-weight:800;
 
-margin-right:8px;
+flex-shrink:0;
 
 }
 
@@ -210,9 +225,11 @@ border:1px solid var(--border);
 
 backdrop-filter:blur(20px);
 
-padding:40px;
+padding:clamp(25px, 5vw, 40px);
 
 border-radius:24px;
+
+width:100%;
 
 }
 
@@ -220,7 +237,7 @@ border-radius:24px;
 
 .form-title{
 
-font-size:2rem;
+font-size:clamp(1.5rem, 4vw, 2rem);
 font-weight:800;
 
 margin-bottom:25px;
@@ -239,7 +256,7 @@ display:block;
 
 margin-bottom:8px;
 
-font-size:14px;
+font-size:clamp(12px, 2vw, 14px);
 
 color:#d1d5db;
 
@@ -249,7 +266,7 @@ color:#d1d5db;
 
 width:100%;
 
-padding:15px;
+padding:clamp(12px, 3vw, 15px);
 
 border:none;
 
@@ -263,11 +280,21 @@ border:1px solid rgba(255,255,255,.08);
 
 color:white;
 
+font-size:clamp(14px, 2vw, 16px);
+
+}
+
+.input-group input::placeholder{
+
+font-size:clamp(12px, 2vw, 14px);
+
 }
 
 .input-group input:focus{
 
 border-color:#00BFFF;
+
+box-shadow:0 0 10px rgba(0, 191, 255, 0.2);
 
 }
 
@@ -275,7 +302,7 @@ border-color:#00BFFF;
 
 width:100%;
 
-padding:16px;
+padding:clamp(12px, 3vw, 16px);
 
 border:none;
 
@@ -283,7 +310,7 @@ border-radius:12px;
 
 cursor:pointer;
 
-font-size:16px;
+font-size:clamp(14px, 2vw, 16px);
 font-weight:700;
 
 background:linear-gradient(
@@ -304,13 +331,21 @@ transition:.3s;
 
 transform:translateY(-2px);
 
+box-shadow:0 10px 25px rgba(0, 191, 255, 0.3);
+
+}
+
+.btn:active{
+
+transform:translateY(0);
+
 }
 
 .btn-google{
 
 width:100%;
 
-padding:14px;
+padding:clamp(12px, 3vw, 14px);
 
 border:1px solid rgba(255,255,255,.15);
 
@@ -318,7 +353,7 @@ border-radius:12px;
 
 cursor:pointer;
 
-font-size:15px;
+font-size:clamp(13px, 2vw, 15px);
 font-weight:600;
 
 background:transparent;
@@ -330,9 +365,11 @@ margin-top:15px;
 display:flex;
 justify-content:center;
 align-items:center;
-gap:10px;
+gap:clamp(6px, 2vw, 10px);
 
 transition:.3s;
+
+flex-wrap:wrap;
 
 }
 
@@ -345,8 +382,16 @@ border-color:rgba(255,255,255,.25);
 
 .btn-google svg {
 
-width:18px;
-height:18px;
+width:clamp(14px, 2vw, 18px);
+height:clamp(14px, 2vw, 18px);
+
+flex-shrink:0;
+
+}
+
+.btn-google span{
+
+display:block;
 
 }
 
@@ -357,7 +402,7 @@ align-items:center;
 text-align:center;
 margin:20px 0;
 color:#6b7280;
-font-size:14px;
+font-size:clamp(12px, 2vw, 14px);
 
 }
 
@@ -389,6 +434,8 @@ margin-top:20px;
 
 color:#9ca3af;
 
+font-size:clamp(12px, 2vw, 14px);
+
 }
 
 .toggle span{
@@ -399,13 +446,21 @@ cursor:pointer;
 
 font-weight:700;
 
+transition:.3s;
+
+}
+
+.toggle span:hover{
+
+text-decoration:underline;
+
 }
 
 .error{
 
 display:none;
 
-padding:12px;
+padding:clamp(10px, 2vw, 12px);
 
 background:rgba(255,0,0,.1);
 
@@ -417,6 +472,10 @@ margin-bottom:20px;
 
 color:#ff9e9e;
 
+font-size:clamp(12px, 2vw, 14px);
+
+word-break:break-word;
+
 }
 
 #signupForm{
@@ -425,7 +484,7 @@ display:none;
 
 }
 
-/* MOBILE */
+/* TABLET */
 
 @media(max-width:900px){
 
@@ -433,17 +492,253 @@ display:none;
 
 grid-template-columns:1fr;
 
+gap:30px;
+
+padding:15px;
+
 }
 
 .left{
 
 text-align:center;
 
+padding:15px 0;
+
 }
 
 .tagline{
 
-font-size:2.2rem;
+font-size:2rem;
+
+}
+
+.card{
+
+max-width:100%;
+
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+body{
+
+padding:15px;
+
+align-items:flex-start;
+
+padding-top:40px;
+
+}
+
+.container{
+
+gap:20px;
+
+padding:10px;
+
+}
+
+.left{
+
+padding:10px 0;
+
+display:none;
+
+}
+
+.card{
+
+padding:20px;
+
+border-radius:18px;
+
+}
+
+.logo{
+
+font-size:24px;
+
+text-align:center;
+
+margin-bottom:15px;
+
+}
+
+.form-title{
+
+font-size:1.4rem;
+
+margin-bottom:20px;
+
+}
+
+.input-group{
+
+margin-bottom:15px;
+
+}
+
+.input-group input{
+
+padding:12px;
+
+font-size:14px;
+
+}
+
+.btn{
+
+padding:13px;
+
+font-size:14px;
+
+margin-top:8px;
+
+}
+
+.btn-google{
+
+padding:12px;
+
+font-size:12px;
+
+gap:8px;
+
+}
+
+.btn-google svg{
+
+width:16px;
+
+height:16px;
+
+}
+
+.error{
+
+padding:10px;
+
+font-size:12px;
+
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:380px){
+
+body{
+
+padding:12px;
+
+padding-top:30px;
+
+}
+
+.container{
+
+gap:15px;
+
+padding:8px;
+
+}
+
+.card{
+
+padding:16px;
+
+}
+
+.form-title{
+
+font-size:1.2rem;
+
+margin-bottom:18px;
+
+}
+
+.input-group{
+
+margin-bottom:12px;
+
+}
+
+.input-group label{
+
+font-size:12px;
+
+margin-bottom:6px;
+
+}
+
+.input-group input{
+
+padding:10px;
+
+font-size:13px;
+
+border-radius:8px;
+
+}
+
+.btn{
+
+padding:11px;
+
+font-size:13px;
+
+margin-top:6px;
+
+border-radius:10px;
+
+}
+
+.btn-google{
+
+padding:10px;
+
+font-size:11px;
+
+gap:6px;
+
+}
+
+.btn-google svg{
+
+width:14px;
+
+height:14px;
+
+}
+
+.divider{
+
+margin:15px 0;
+
+font-size:12px;
+
+}
+
+.toggle{
+
+margin-top:15px;
+
+font-size:12px;
+
+}
+
+.error{
+
+padding:8px;
+
+font-size:11px;
+
+margin-bottom:15px;
 
 }
 
@@ -485,19 +780,19 @@ Join a community focused on awareness, transparency, accountability, and safer e
 <div class="features">
 
 <div class="feature">
-<span>✓</span> Anonymous Reporting
+<span>✓</span> <span>Anonymous Reporting</span>
 </div>
 
 <div class="feature">
-<span>✓</span> Community Awareness
+<span>✓</span> <span>Community Awareness</span>
 </div>
 
 <div class="feature">
-<span>✓</span> Rights Protection
+<span>✓</span> <span>Rights Protection</span>
 </div>
 
 <div class="feature">
-<span>✓</span> Secure Authentication
+<span>✓</span> <span>Secure Authentication</span>
 </div>
 
 </div>
@@ -557,7 +852,7 @@ Login
 <path fill="#34A853" d="M1.41 7.56C.52 9.31 0 11.26 0 13.31s.52 4 1.41 5.75l4.65-3.61c-.22-.65-.34-1.34-.34-2.14 0-.79.12-1.49.34-2.14L1.41 7.56z"/>
 </svg>
 
-Continue with Google
+<span>Continue with Google</span>
 
 </button>
 
@@ -636,7 +931,7 @@ Create Account
 <path fill="#34A853" d="M1.41 7.56C.52 9.31 0 11.26 0 13.31s.52 4 1.41 5.75l4.65-3.61c-.22-.65-.34-1.34-.34-2.14 0-.79.12-1.49.34-2.14L1.41 7.56z"/>
 </svg>
 
-Sign up with Google
+<span>Sign up with Google</span>
 
 </button>
 
