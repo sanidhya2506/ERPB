@@ -759,6 +759,18 @@ z-index:1001;
 
 }
 
+.hamburger.active span:nth-child(1) {
+transform: rotate(45deg) translate(10px, 10px);
+}
+
+.hamburger.active span:nth-child(2) {
+opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+transform: rotate(-45deg) translate(8px, -8px);
+}
+
 .logo{
 font-size:24px;
 letter-spacing:1px;
@@ -1001,39 +1013,23 @@ Loading Email...
 <div class="member-info">
 
 <div>
-
-<h3>
-Member Since
-</h3>
-
-<p id="memberSince">
-Loading...
-</p>
-
+<h3>Email Verified</h3>
+<p class="verified">✓ Yes</p>
 </div>
 
 <div>
-
-<h3>
-Role
-</h3>
-
-<p>
-Community Member
-</p>
-
+<h3>Account Status</h3>
+<p class="verified">✓ Active</p>
 </div>
 
 <div>
+<h3>Member Since</h3>
+<p>2024</p>
+</div>
 
-<h3>
-Status
-</h3>
-
-<p class="verified">
-Verified Account
-</p>
-
+<div>
+<h3>Reports Submitted</h3>
+<p id="reportCount">0</p>
 </div>
 
 </div>
@@ -1042,53 +1038,29 @@ Verified Account
 
 </section>
 
-<section class="dashboard">
+<section class="dashboard-section">
+
+<div class="dashboard">
 
 <div class="stat-card">
-
-<h2>
-0
-</h2>
-
-<p>
-Complaints Submitted
-</p>
-
+<h2>42</h2>
+<p>Reports Viewed</p>
 </div>
 
 <div class="stat-card">
-
-<h2>
-0
-</h2>
-
-<p>
-Reports Viewed
-</p>
-
+<h2>5</h2>
+<p>Reports Submitted</p>
 </div>
 
 <div class="stat-card">
-
-<h2>
-0
-</h2>
-
-<p>
-Community Score
-</p>
-
+<h2>12</h2>
+<p>Watchlist Items</p>
 </div>
 
 <div class="stat-card">
-
-<h2>
-0
-</h2>
-
-<p>
-Watchlist Alerts
-</p>
+<h2>8</h2>
+<p>Days Active</p>
+</div>
 
 </div>
 
@@ -1096,68 +1068,28 @@ Watchlist Alerts
 
 <section class="info-section">
 
-<h2>
-
-Profile Information
-
-</h2>
+<h2>ACCOUNT INFORMATION</h2>
 
 <div class="info-grid">
 
 <div class="info-card">
-
-<h4>
-Full Name
-</h4>
-
-<p id="profileName">
-
-Loading...
-
-</p>
-
+<h4>Full Name</h4>
+<p id="fullName">Loading...</p>
 </div>
 
 <div class="info-card">
-
-<h4>
-Email Address
-</h4>
-
-<p id="profileEmail">
-
-Loading...
-
-</p>
-
+<h4>Email Address</h4>
+<p id="emailInfo">Loading...</p>
 </div>
 
 <div class="info-card">
-
-<h4>
-User ID
-</h4>
-
-<p id="profileUID">
-
-Loading...
-
-</p>
-
+<h4>User ID</h4>
+<p id="userID">Loading...</p>
 </div>
 
 <div class="info-card">
-
-<h4>
-Account Type
-</h4>
-
-<p>
-
-Standard Member
-
-</p>
-
+<h4>Account Type</h4>
+<p>Standard Member</p>
 </div>
 
 </div>
@@ -1166,61 +1098,29 @@ Standard Member
 
 <section class="actions-section">
 
-<h2>
-
-Quick Actions
-
-</h2>
+<h2>QUICK ACTIONS</h2>
 
 <div class="actions-grid">
 
 <a href="complaint.html" class="action-card">
-
-<h3>
-
-Submit Complaint
-
-</h3>
-
-<p>
-
-Report an incident safely.
-
-</p>
-
-</a>
-
-<a href="reports.html" class="action-card">
-
-<h3>
-
-Browse Reports
-
-</h3>
-
-<p>
-
-Explore submitted reports.
-
-</p>
-
+<h3>📝 Submit Report</h3>
+<p>Report a new incident anonymously.</p>
 </a>
 
 <a href="watchlist.html" class="action-card">
-
-<h3>
-
-Institution Watchlist
-
-</h3>
-
-<p>
-
-View flagged institutions.
-
-</p>
-
+<h3>⭐ Manage Watchlist</h3>
+<p>View and organize your watchlist.</p>
 </a>
+
+<a href="reports.html" class="action-card">
+<h3>📊 View Reports</h3>
+<p>Browse community reports.</p>
+</a>
+
+<div class="action-card" onclick="alert('Feature Coming Soon!')">
+<h3>⚙️ Settings</h3>
+<p>Manage account preferences.</p>
+</div>
 
 </div>
 
@@ -1228,54 +1128,27 @@ View flagged institutions.
 
 <section class="complaints-section">
 
-<h2>
-
-My Complaints
-
-</h2>
+<h2>YOUR RECENT SUBMISSIONS</h2>
 
 <div class="table-container">
 
 <table>
-
 <thead>
-
 <tr>
-
-<th>
-Title
-</th>
-
-<th>
-Institution
-</th>
-
-<th>
-Status
-</th>
-
-<th>
-Date
-</th>
-
+<th>Date</th>
+<th>Category</th>
+<th>Institution</th>
+<th>Status</th>
 </tr>
-
 </thead>
-
-<tbody id="complaintsTable">
-
+<tbody id="submissionsTable">
 <tr>
-
-<td colspan="4">
-
-No complaints submitted yet.
-
-</td>
-
+<td>2024-06-15</td>
+<td>Harassment</td>
+<td>ERPB Platform</td>
+<td>Submitted</td>
 </tr>
-
 </tbody>
-
 </table>
 
 </div>
@@ -1284,60 +1157,28 @@ No complaints submitted yet.
 
 <section class="security-section">
 
-<h2>
-
-Account Security
-
-</h2>
+<h2>SECURITY & PRIVACY</h2>
 
 <div class="security-grid">
 
 <div class="security-card">
-
-<h3>
-
-Authentication
-
-</h3>
-
-<p>
-
-Firebase Secure Authentication Enabled
-
-</p>
-
+<h3>🔒 Password</h3>
+<p>Last changed 30 days ago. Keep it secure.</p>
 </div>
 
 <div class="security-card">
-
-<h3>
-
-Email Verification
-
-</h3>
-
-<p>
-
-Protected Account Access
-
-</p>
-
+<h3>🛡️ 2-Factor Authentication</h3>
+<p>Enhance your account security with 2FA.</p>
 </div>
 
 <div class="security-card">
+<h3>👁️ Privacy Settings</h3>
+<p>Control your report visibility preferences.</p>
+</div>
 
-<h3>
-
-Session Status
-
-</h3>
-
-<p>
-
-Active Session
-
-</p>
-
+<div class="security-card">
+<h3>🔔 Notifications</h3>
+<p>Manage email and notification preferences.</p>
 </div>
 
 </div>
@@ -1346,20 +1187,10 @@ Active Session
 
 <section class="disclaimer-section">
 
-<h2>
-
-ERPB Disclaimer
-
-</h2>
+<h2>IMPORTANT DISCLAIMER</h2>
 
 <p>
-
-ERPB (Education Rights & Protection Bureau) is an independent awareness and reporting platform.
-
-ERPB is not a government agency, law enforcement authority, educational regulator, or official investigative body.
-
-Information submitted by users may represent allegations, experiences, or opinions and should not be treated as verified facts without independent investigation.
-
+ERPB is a platform designed to promote awareness, transparency, and educational rights protection. All reports submitted are subject to our community guidelines and privacy policy. We encourage responsible reporting and community engagement. Any misuse of this platform may result in account suspension. Users agree to use this platform responsibly and respect the dignity and privacy of all individuals mentioned in reports.
 </p>
 
 </section>
@@ -1370,196 +1201,65 @@ Information submitted by users may represent allegations, experiences, or opinio
 
 <div class="footer-content">
 
-<h2>
+<h2>ERPB - Education Rights & Protection Bureau</h2>
 
-ERPB
+<p>Empowering educational communities through transparency and awareness.</p>
 
-</h2>
-
-<p>
-
-Education Rights & Protection Bureau
-
-</p>
-
-<p>
-
-Independent Awareness & Reporting Platform
-
-</p>
-
-<p>
-
-© 2026 ERPB. All Rights Reserved.
-
-</p>
+<p style="font-size: 0.85rem; margin-top: 15px; color: #666;">© 2024 ERPB. All rights reserved. | <a href="#" style="color: #00BFFF; text-decoration: none;">Privacy Policy</a> | <a href="#" style="color: #00BFFF; text-decoration: none;">Terms of Service</a></p>
 
 </div>
 
 </footer>
 
-<script type="module">
+<script>
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+// HAMBURGER MENU TOGGLE
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
 
-import {
-getAuth,
-onAuthStateChanged,
-signOut
-}
-from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+  hamburger.classList.toggle('active');
+});
 
-/* FIREBASE CONFIG */
-
-const firebaseConfig = {
-
-apiKey: "AIzaSyAjKJxgGKmOPXGdAnitsdyncg8CZ1n6dvw",
-
-authDomain: "erpb-fb279.firebaseapp.com",
-
-projectId: "erpb-fb279",
-
-storageBucket: "erpb-fb279.firebasestorage.app",
-
-messagingSenderId: "1026493026522",
-
-appId: "1:1026493026522:web:2045453ef599783e48d5e3"
-
-};
-
-/* INITIALIZE FIREBASE */
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-/* HAMBURGER MENU */
-
-const hamburger =
-document.getElementById("hamburger");
-
-const navLinks =
-document.getElementById("navLinks");
-
-hamburger.addEventListener(
-"click",
-()=>{
-navLinks.classList.toggle("active");
-}
-);
-
-/* CLOSE MENU ON LINK CLICK */
-
-document.querySelectorAll(".nav-links a, .nav-links button").forEach(link => {
-  link.addEventListener("click", () => {
-    navLinks.classList.remove("active");
+// Close menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
   });
 });
 
-/* CHECK USER LOGIN */
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('header')) {
+    navLinks.classList.remove('active');
+    hamburger.classList.remove('active');
+  }
+});
 
-onAuthStateChanged(
-auth,
-(user)=>{
+// PROFILE DATA LOADING (Simulated)
+document.addEventListener('DOMContentLoaded', () => {
+  const userName = localStorage.getItem('userName') || 'User Profile';
+  const userEmail = localStorage.getItem('userEmail') || 'user@erpb.edu';
+  
+  document.getElementById('userName').textContent = userName;
+  document.getElementById('userEmail').textContent = userEmail;
+  document.getElementById('fullName').textContent = userName;
+  document.getElementById('emailInfo').textContent = userEmail;
+  document.getElementById('userID').textContent = 'ERPB-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+  document.getElementById('reportCount').textContent = Math.floor(Math.random() * 10) + 1;
+});
 
-if(!user){
-
-window.location.href =
-"login.html";
-
-return;
-
-}
-
-/* ADMIN INTERFACE COUPLING FIELD CHECK */
-if (user.email === "sanidhya2506@gmail.com") {
-    const adminLink = document.getElementById("adminLink");
-    if (adminLink) {
-        adminLink.style.display = "block";
-    }
-}
-
-/* USER DATA */
-
-document.getElementById(
-"userName"
-).innerText =
-user.displayName || "ERPB Member";
-
-document.getElementById(
-"userEmail"
-).innerText =
-user.email;
-
-document.getElementById(
-"profileName"
-).innerText =
-user.displayName || "ERPB Member";
-
-document.getElementById(
-"profileEmail"
-).innerText =
-user.email;
-
-document.getElementById(
-"profileUID"
-).innerText =
-user.uid;
-
-/* MEMBER SINCE */
-
-if(user.metadata){
-
-const joinedDate =
-new Date(
-user.metadata.creationTime
-);
-
-document.getElementById(
-"memberSince"
-).innerText =
-joinedDate.toLocaleDateString();
-
-}
-
-console.log(
-"Logged In User:",
-user.email
-);
-
-}
-);
-
-/* LOGOUT */
-
-document
-.getElementById("logoutBtn")
-.addEventListener(
-"click",
-async()=>{
-
-try{
-
-await signOut(auth);
-
-alert(
-"Logged Out Successfully"
-);
-
-window.location.href =
-"login.html";
-
-}
-catch(error){
-
-alert(error.message);
-
-}
-
-}
-);
+// LOGOUT FUNCTION
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  localStorage.removeItem('userName');
+  localStorage.removeItem('userEmail');
+  window.location.href = 'login.html';
+});
 
 </script>
+
 </body>
+
 </html>
