@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ERPB | Education Rights & Protection Bureau</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+:root{
+
+--bg:#050505;
+--bg2:#0d0d0d;
+
+--card:#121212;
+
+--primary:#00BFFF;
+--primary2:#4FC3F7;
+
+--text:#ffffff;
+--muted:#9ca3af;
+
+--border:rgba(255,255,255,.08);
+
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--bg);
+color:white;
+overflow-x:hidden;
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:var(--primary);
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#080808;
+}
+
+/* BACKGROUND */
+
+.background{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+z-index:-1;
+overflow:hidden;
+
+}
+
+.glow{
+
+position:absolute;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:.12;
+
+animation:float 10s ease-in-out infinite;
+
+}
+
+.glow1{
+
+width:350px;
+height:350px;
+
+background:#00bfff;
+
+top:-80px;
+left:-100px;
+
+}
+
+.glow2{
+
+width:350px;
+height:350px;
+
+background:#4FC3F7;
+
+bottom:-80px;
+right:-100px;
+
+animation-delay:3s;
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-40px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+/* NAVBAR */
+
+header{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+z-index:1000;
+
+backdrop-filter:blur(20px);
+
+background:rgba(0,0,0,.65);
+
+border-bottom:1px solid rgba(255,255,255,.05);
+
+}
+
+.navbar{
+
+max-width:1400px;
+
+margin:auto;
+
+padding:20px 30px;
+
+display:flex;
+
+justify-content:space-between;
+align-items:center;
+
+}
+
+.logo{
+
+font-size:28px;
+font-weight:900;
+
+letter-spacing:1px;
+
+color:var(--primary);
+
+text-shadow:
+0 0 10px var(--primary),
+0 0 30px var(--primary);
+
+}
+
+.nav-links{
+
+display:flex;
+gap:30px;
+align-items:center;
+list-style:none;
+padding:0;
+margin:0;
+
+}
+
+.nav-links li{
+display:inline-block;
+}
+
+.nav-links a{
+
+text-decoration:none;
+
+color:#d1d5db;
+
+transition:.3s;
+
+font-weight:600;
+font-size:15px;
+
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+
+color:var(--primary);
+
+}
+
+.logout-btn{
+
+padding:10px 18px;
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--primary2)
+);
+
+border:none;
+border-radius:10px;
+
+color:white !important;
+
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+
+}
+
+.logout-btn:hover{
+opacity:0.9;
+transform:translateY(-1px);
+}
+
+.hamburger{
+
+display:none;
+
+font-size:30px;
+
+cursor:pointer;
+
+}
+
+/* HERO */
+
+.hero{
+
+min-height:100vh;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:120px 20px 80px;
+
+text-align:center;
+
+}
+
+.hero-content{
+
+max-width:1000px;
+
+}
+
+.badge{
+
+display:inline-block;
+
+padding:10px 20px;
+
+border-radius:999px;
+
+background:rgba(0,191,255,.08);
+
+border:1px solid rgba(0,191,255,.25);
+
+color:var(--primary);
+
+font-size:14px;
+
+font-weight:600;
+
+margin-bottom:25px;
+
+}
+
+.hero h1{
+
+font-size:clamp(3rem,8vw,7rem);
+
+font-weight:900;
+
+line-height:1.1;
+
+margin-bottom:20px;
+
+}
+
+.hero h1 span{
+
+color:var(--primary);
+
+text-shadow:
+0 0 20px var(--primary);
+
+}
+
+.hero p{
+
+max-width:850px;
+
+margin:auto;
+
+font-size:1.1rem;
+
+line-height:1.9;
+
+color:#d1d5db;
+
+margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+margin-bottom:40px;
+
+}
+
+.btn{
+
+padding:16px 32px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:700;
+
+transition:.3s;
+
+}
+
+.btn-primary{
+
+background:linear-gradient(
+135deg,
+var(--primary),
+var(--primary2)
+);
+
+color:white;
+
+box-shadow:
+0 0 30px rgba(0,191,255,.25);
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-3px);
+
+}
+
+.btn-secondary{
+
+border:1px solid rgba(255,255,255,.1);
+
+color:white;
+
+}
+
+.btn-secondary:hover{
+
+border-color:var(--primary);
+
+color:var(--primary);
+
+}
+
+.hero-features{
+
+display:flex;
+
+justify-content:center;
+
+gap:40px;
+
+flex-wrap:wrap;
+
+}
+
+.feature{
+
+color:#d1d5db;
+
+}
+
+.feature span{
+
+color:#00ff88;
+
+font-weight:800;
+
+margin-right:8px;
+
+}
+
+/* SECTION */
+
+.section{
+
+max-width:1300px;
+
+margin:auto;
+
+padding:100px 25px;
+
+}
+
+.section-title{
+
+font-size:3rem;
+
+font-weight:800;
+
+text-align:center;
+
+margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+text-align:center;
+
+color:#9ca3af;
+
+max-width:700px;
+
+margin:auto auto 60px;
+
+}
+
+/* STATS */
+
+.stats{
+
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+
+gap:25px;
+
+}
+
+.stat-card{
+
+background:rgba(255,255,255,.04);
+
+border:1px solid var(--border);
+
+backdrop-filter:blur(15px);
+
+padding:35px;
+
+border-radius:24px;
+
+text-align:center;
+
+}
+
+.stat-card h3 {
+
+font-size:1.5rem;
+
+font-weight:700;
+
+margin-bottom:12px;
+
+color:#ffffff;
+
+}
+
+.stat-card p {
+
+color:#9ca3af;
+
+font-size:0.95rem;
+
+line-height:1.6;
+
+}
+
+.stat-number{
+
+font-size:3rem;
+
+font-weight:900;
+
+color:var(--primary);
+
+margin-bottom:10px;
+
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.nav-links{
+
+display:none;
+
+position:absolute;
+
+top:80px;
+right:0;
+left:auto;
+
+width:280px;
+height:100vh;
+
+background:#0a0a0a;
+
+padding:40px 25px;
+
+flex-direction:column;
+justify-content:flex-start;
+gap:25px;
+
+}
+
+.nav-links.active{
+display:flex;
+}
+
+.hamburger{
+display:block;
+}
+
+.hero-buttons{
+flex-direction:column;
+align-items:center;
+}
+
+.btn{
+width:280px;
+text-align:center;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background">
+
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
+
+</div>
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">ERPB</div>
+
+<ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li><a href="reports.html">Reports</a></li>
+    <li><a href="watchlist.html">Watchlist</a></li>
+    <li><a href="complaint.html">Submit Complaint</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="admin.html" id="adminLink" style="display:none; color: #ff0055;">Admin Panel</a></li>
+    <li><button id="logoutBtn" class="logout-btn">Logout</button></li>
+</ul>
+
+<div class="hamburger" id="hamburgerBtn">
+☰
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+
+EDUCATION RIGHTS & PROTECTION BUREAU
+
+</div>
+
+<h1>
+
+Speak.
+<span>Report.</span>
+Protect.
+
+</h1>
+
+<p>
+
+ERPB is an independent awareness, transparency, and educational rights platform designed to empower students, teachers, parents, and educational communities. We provide a safe environment to report concerns, learn about educational rights, promote accountability, and encourage safer educational ecosystems through community-driven awareness.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="complaint.html" class="btn btn-primary">
+
+Report Incident
+
+</a>
+
+<a href="reports.html" class="btn btn-secondary">
+
+View Reports
+
+</a>
+
+</div>
+
+<div class="hero-features">
+
+<div class="feature">
+
+Anonymous Reporting
+
+</div>
+
+<div class="feature">
+
+Rights Awareness
+
+</div>
+
+<div class="feature">
+
+Community Transparency
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Platform Snapshot
+
+</h2>
+
+<p class="section-subtitle">
+
+Building awareness, transparency, and accountability across educational communities.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<div class="stat-number">1,257</div>
+
+Community Reports
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-number">82</div>
+
+Institutions Mentioned
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-number">4,200+</div>
+
+Community Members
+
+</div>
+
+<div class="stat-card">
+
+<div class="stat-number">24/7</div>
+
+Awareness Access
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Why ERPB Exists
+
+</h2>
+
+<p class="section-subtitle">
+
+Educational institutions should be places of learning, growth, safety, and dignity. Unfortunately, students, teachers, and staff sometimes face issues that go unnoticed or unreported. ERPB exists to promote awareness, encourage responsible reporting, and help communities understand educational rights and responsibilities.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>Anti-Bullying</h3>
+
+<p>Promoting safer and more respectful learning environments.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Rights Awareness</h3>
+
+<p>Helping communities understand educational rights and protections.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Transparency</h3>
+
+<p>Encouraging responsible discussion around educational concerns.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Community Support</h3>
+
+<p>Building awareness through collective participation.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Who Can Use ERPB?
+
+</h2>
+
+<p class="section-subtitle">
+
+ERPB is designed for everyone involved in education.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>Students</h3>
+
+<p>Report concerns, learn rights, and access awareness resources.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Teachers</h3>
+
+<p>Raise concerns and promote healthy educational practices.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Parents</h3>
+
+<p>Stay informed and advocate for safer educational environments.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Staff</h3>
+
+<p>Support transparency and community awareness initiatives.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Incident Categories
+
+</h2>
+
+<p class="section-subtitle">
+
+Educational concerns may take many forms. ERPB helps organize reports into categories.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+Bullying
+
+</div>
+
+<div class="stat-card">
+
+Ragging
+
+</div>
+
+<div class="stat-card">
+
+Harassment
+
+</div>
+
+<div class="stat-card">
+
+Discrimination
+
+</div>
+
+<div class="stat-card">
+
+Cyber Misconduct
+
+</div>
+
+<div class="stat-card">
+
+Mental Abuse
+
+</div>
+
+<div class="stat-card">
+
+Physical Abuse
+
+</div>
+
+<div class="stat-card">
+
+Fee Irregularities
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+How ERPB Works
+
+</h2>
+
+<p class="section-subtitle">
+
+A simple and transparent reporting and awareness process.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>1. Register</h3>
+
+<p>Create an account or access available community resources.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>2. Submit</h3>
+
+<p>Share educational concerns responsibly.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>3. Review</h3>
+
+<p>Reports become part of awareness and transparency efforts.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>4. Learn</h3>
+
+<p>Access educational rights, awareness guides, and resources.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Recent Community Reports
+
+</h2>
+
+<p class="section-subtitle">
+
+Examples of how reports may appear on the platform.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>Bullying Incident</h3>
+
+<p>Location: Jaipur</p>
+
+<p>Status: Reported</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Fee Concern</h3>
+
+<p>Location: Delhi</p>
+
+<p>Status: Under Review</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Cyber Misconduct</h3>
+
+<p>Location: Mumbai</p>
+
+<p>Status: Reported</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Harassment Concern</h3>
+
+<p>Location: Bengaluru</p>
+
+<p>Status: Community Discussion</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Community Watchlist Preview
+
+</h2>
+
+<p class="section-subtitle">
+
+Frequently reported institutions may appear here for awareness purposes. Inclusion does not imply guilt or verified wrongdoing.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>Institution A</h3>
+
+<p>12 Reports</p>
+
+<p>Common Category: Bullying</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Institution B</h3>
+
+<p>9 Reports</p>
+
+<p>Common Category: Harassment</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Institution C</h3>
+
+<p>7 Reports</p>
+
+<p>Common Category: Discrimination</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Institution D</h3>
+
+<p>5 Reports</p>
+
+<p>Common Category: Cyber Misconduct</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Know Your Rights
+
+</h2>
+
+<p class="section-subtitle">
+
+Awareness begins with understanding your rights and responsibilities within educational environments.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>Right to Safety</h3>
+
+<p>Every student deserves a safe and respectful learning environment.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Right to Equality</h3>
+
+<p>Equal opportunities regardless of gender, background, or identity.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Right to Education</h3>
+
+<p>Access to quality education without discrimination.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Right to Dignity</h3>
+
+<p>Freedom from bullying, humiliation, and harassment.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Awareness Hub
+
+</h2>
+
+<p class="section-subtitle">
+
+Educational resources to help communities stay informed and protected.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-card">
+
+<h3>Anti-Ragging Guide</h3>
+
+<p>Understand signs, risks, and prevention strategies.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Cyber Safety</h3>
+
+<p>Protect yourself from online harassment and abuse.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Mental Health</h3>
+
+<p>Resources promoting well-being and emotional safety.</p>
+
+</div>
+
+<div class="stat-card">
+
+<h3>Reporting Guide</h3>
+
+<p>Learn how responsible reporting contributes to awareness.</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Mission & Vision
+
+</h2>
+
+<p class="section-subtitle">
+
+ERPB aims to build a culture of awareness, transparency, accountability, and educational rights advocacy. We believe that safer educational environments emerge when communities are informed, engaged, and empowered.
+
+</p>
+
+</section>
+
+<section class="section">
+
+<h2 class="section-title">
+
+Frequently Asked Questions
+
+</h2>
+
+<div style="max-width:900px;margin:auto;">
+
+<details class="stat-card" style="margin-bottom:15px;" name="faq">
+
+<summary><strong>What is ERPB?</strong></summary>
+
+<br>
+
+ERPB is an independent awareness and reporting platform focused on educational rights, transparency, and community awareness.
+
+</details>
+
+<details class="stat-card" style="margin-bottom:15px;" name="faq">
+
+<summary><strong>Is ERPB a government organization?</strong></summary>
+
+<br>
+
+No. ERPB is not affiliated with any government authority, law enforcement agency, educational institution, or regulatory body.
+
+</details>
+
+<details class="stat-card" style="margin-bottom:15px;" name="faq">
+
+<summary><strong>Can reports be submitted anonymously?</strong></summary>
+
+<br>
+
+The platform is designed to support privacy-conscious reporting options where applicable.
+
+</details>
+
+<details class="stat-card" style="margin-bottom:15px;" name="faq">
+
+<summary><strong>Are reports verified facts?</strong></summary>
+
+<br>
+
+No. Reports are user-submitted allegations and should not automatically be considered verified information.
+
+</details>
+
+<details class="stat-card" name="faq">
+
+<summary><strong>Who can use ERPB?</strong></summary>
+
+<br>
+
+Students, parents, teachers, staff members, and educational communities.
+
+</details>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="stat-card" style="
+border:1px solid rgba(255,77,77,.4);
+background:rgba(255,77,77,.05);
+">
+
+<h2 style="
+color:#ff4d4d;
+margin-bottom:20px;
+">
+
+Important Legal Disclaimer
+
+</h2>
+
+<p style="
+color:#d1d5db;
+line-height:2;
+">
+
+ERPB (Education Rights & Protection Bureau) is an independent awareness, transparency, and educational rights platform.
+
+ERPB is NOT a government authority, law enforcement agency, court, regulatory body, educational institution, or official complaint resolution organization.
+
+Information appearing on the platform may be user-submitted and should not be interpreted as verified facts, legal findings, or official conclusions.
+
+Users are solely responsible for the content they submit. ERPB promotes awareness and responsible community engagement and does not guarantee the accuracy, completeness, or validity of user-generated content.
+
+</p>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="stat-card" style="text-align:center;">
+
+<h2 style="
+font-size:3rem;
+margin-bottom:20px;
+">
+
+Speak.
+Report.
+Protect.
+
+</h2>
+
+<p style="
+max-width:700px;
+margin:auto;
+color:#9ca3af;
+margin-bottom:30px;
+">
+
+Join a growing community committed to awareness, transparency, and safer educational environments.
+
+</p>
+
+<a href="complaint.html" class="btn btn-primary">
+
+Submit a Report
+
+</a>
+
+</div>
+
+</section>
+
+<footer style="
+background:#080808;
+border-top:1px solid rgba(255,255,255,.08);
+padding:70px 30px 30px;
+">
+
+<div style="
+max-width:1300px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+">
+
+<div>
+
+<h3 style="
+color:#00BFFF;
+font-size:28px;
+margin-bottom:15px;
+">
+
+ERPB
+
+</h3>
+
+<p style="
+color:#9ca3af;
+line-height:1.8;
+">
+
+Education Rights & Protection Bureau is dedicated to awareness, transparency, educational rights advocacy, and community engagement.
+
+</p>
+
+</div>
+
+<div>
+
+<h3 style="margin-bottom:15px;">
+Quick Links
+</h3>
+
+<p><a href="index.html" style="color:#9ca3af;text-decoration:none;">Home</a></p>
+<p><a href="profile.html" style="color:#9ca3af;text-decoration:none;">Profile</a></p>
+<p><a href="reports.html" style="color:#9ca3af;text-decoration:none;">Reports</a></p>
+<p><a href="watchlist.html" style="color:#9ca3af;text-decoration:none;">Watchlist</a></p>
+<p><a href="about.html" style="color:#9ca3af;text-decoration:none;">About</a></p>
+
+</div>
+
+<div>
+
+<h3 style="margin-bottom:15px;">
+Resources
+</h3>
+
+<p style="color:#9ca3af;">Student Rights</p>
+<p style="color:#9ca3af;">Cyber Safety</p>
+<p style="color:#9ca3af;">Mental Health</p>
+<p style="color:#9ca3af;">Awareness Guides</p>
+
+</div>
+
+<div>
+
+<h3 style="margin-bottom:15px;">
+Legal
+</h3>
+
+<p style="color:#9ca3af;">Privacy Policy</p>
+<p style="color:#9ca3af;">Terms of Use</p>
+<p style="color:#9ca3af;">Disclaimer</p>
+
+</div>
+
+</div>
+
+<hr style="
+margin:40px 0 20px;
+border:none;
+border-top:1px solid rgba(255,255,255,.08);
+">
+
+<div style="
+text-align:center;
+color:#9ca3af;
+">
+
+© 2026 ERPB — Education Rights & Protection Bureau
+
+<br><br>
+
+Speak. Report. Protect.
+
+</div>
+
+</footer>
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+
+import {
+getAuth,
+onAuthStateChanged,
+signOut
+}
+from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAjKJxgGKmOPXGdAnitsdyncg8CZ1n6dvw",
+
+authDomain: "erpb-fb279.firebaseapp.com",
+
+projectId: "erpb-fb279",
+
+storageBucket: "erpb-fb279.firebasestorage.app",
+
+messagingSenderId: "1026493026522",
+
+appId: "1:1026493026522:web:2045453ef599783e48d5e3"
+
+};
+
+/* INITIALIZE FIREBASE */
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+
+/* HAMBURGER MENU */
+const hamburgerBtn = document.getElementById("hamburgerBtn");
+const navLinks = document.getElementById("navLinks");
+
+hamburgerBtn.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+/* SESS STATUS & ADMIN FILTER LINK */
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        // Change this email string to YOUR real registration admin email account
+        if (user.email === "sanidhya2506@gmail.com") {
+            const adminLink = document.getElementById("adminLink");
+            if (adminLink) {
+                adminLink.style.display = "block";
+            }
+        }
+    }
+});
+
+/* LOGOUT HANDLER TRIGGER */
+document.getElementById("logoutBtn").addEventListener("click", async () => {
+    try {
+        await signOut(auth);
+        window.location.href = "login.html";
+    } catch (error) {
+        alert(error.message);
+    }
+});
+
+
+
+</script>
+
+</body>
+</html>
